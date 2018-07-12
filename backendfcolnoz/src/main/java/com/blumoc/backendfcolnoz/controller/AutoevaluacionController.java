@@ -33,7 +33,7 @@ public class AutoevaluacionController {
 	public ModelAndView getMetodoDos() {
 		ModelAndView mav = new ModelAndView(AUTOEVALUACION_VIEW);
 		autService.getMessageService();
-		mav.addObject("mensaje", "mensaje");
+		mav.addObject("mensaje", "mensaje en el correo");
 		return mav;
 	}
 	
