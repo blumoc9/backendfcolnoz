@@ -1,3 +1,21 @@
 spring:
   banner:
     location: classpath:/bannerSpring.txt
+  datasource:
+    
+    url: jdbc:postgresql://localhost:5432/develop18  
+    data-username:  develop
+    data-password:  develop 
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    show-sql: true
+   
+      
