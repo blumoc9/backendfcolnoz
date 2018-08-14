@@ -3,17 +3,22 @@ package com.blumoc.backendfcolnoz.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="course")
 public class Course {
 
 	@Id
-	@GeneratedValue
-	@Column(name="id")
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@SequenceGenerator(name="course_generato", sequenceName = "course_seq", allocationSize=50)
+	@Column(name="id" , updatable = false, nullable = false)
+	private Long id;
 	
 	@Column(name="name")
 	private String name;
@@ -25,7 +30,7 @@ public class Course {
 	private int hours;
 	
 	
-	public Course(int id, String name, String description, int price, int hours) {
+	public Course(Long id, String name, String description, int price, int hours) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -40,10 +45,10 @@ public class Course {
 	}
 
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -69,6 +74,13 @@ public class Course {
 	}
 	public void setHours(int hours) {
 		this.hours = hours;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", hours="
+				+ hours + "]";
 	}
 	
 	

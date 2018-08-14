@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+<title>Courses</title>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>NAME</th>
+			<th>DESCRIPTION</th>
+			<th>PRICE</th>
+			<th>HOURS</th>
+		</tr>
+	</thead>
+	
+	<tbody th:each="course :${courses}">
+		<tr>
+			<th><span th:text="${course.name}"></span></th>
+		
+			<th><span th:text="${course.description}"></th>
+		
+			<th><span th:text="${course.price}"></th>
+		
+			<th><span th:text="${course.hours}"></th>
+		</tr>
+	
+	
+	</tbody>
+</table>
+<div class="row">
+	<form action="#" th:action="@{/courses/addcourse}" th:object="${course}" method="post" class="col s12">
+		<div class="row">
+			<div class="input-field col s6">
+				<input type="text" th:field="${course.name}" placeholder="Name of course" id="name" class="validate" />
+				<label for="name">Name</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" th:field="${course.description}" id="description" placeholder="Description of Course" class="validate"/>
+				<label for="description">Description</label>
+			</div>
+			
+		</div> 
+		
+		<div class="row">
+			<div class="input-field col s6">
+				<input type="number" th:field="${course.price}" id="price" placeholder="Price of Course" class="validate"/>
+				<label for="price">Price</label>
+			</div>
+			
+			<div class="input-field col s6">
+				<input type="number" th:field="${course.hours}" id="hours"/>
+				<label for="hours">Hours</label>
+			</div>
+		</div>
+		<div class="btn">
+			<button class="btn waves-effect waves-light" type="submit" value="Submit">
+		    	<i class="material-icons right">enviar</i>
+		  	</button>
+		</div>
+		
+	</form>
+</div>
+
+  
+</body>
+</html>

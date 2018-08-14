@@ -10,7 +10,7 @@ public interface CourseService {
 	
 	public abstract Course addCourse(Course course);
 	
-	public abstract int removeCourse(int id);
+	public abstract Long removeCourse(Long id);
 	
 	public abstract Course updateCourse(Course course);
 }
