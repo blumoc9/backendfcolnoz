@@ -2,7 +2,6 @@ spring:
   banner:
     location: classpath:/bannerSpring.txt
   datasource:
-    
     url: jdbc:postgresql://localhost:5432/develop18  
     data-username:  develop
     data-password:  develop 

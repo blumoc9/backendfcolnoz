@@ -10,7 +10,9 @@
 <title>Courses</title>
 </head>
 <body>
-<table>
+ <div class="container">
+ 
+<table class="responsive-table centered highlight">
 	<thead>
 		<tr>
 			<th>NAME</th>
@@ -20,15 +22,15 @@
 		</tr>
 	</thead>
 	
-	<tbody th:each="course :${courses}">
-		<tr>
-			<th><span th:text="${course.name}"></span></th>
+	<tbody th:each="course :${courses}" >
+		<tr class="centered highlight" >
+			<td class="centered"><span th:text="${course.name}"></span></td>
 		
-			<th><span th:text="${course.description}"></th>
+			<td class="centered"><span th:text="${course.description}"></td>
 		
-			<th><span th:text="${course.price}"></th>
+			<td class="centered"> <span th:text="${course.price}"></td>
 		
-			<th><span th:text="${course.hours}"></th>
+			<td class="centered"><span th:text="${course.hours}"></td>
 		</tr>
 	
 	
@@ -66,6 +68,7 @@
 		</div>
 		
 	</form>
+ </div>
 </div>
 
   
